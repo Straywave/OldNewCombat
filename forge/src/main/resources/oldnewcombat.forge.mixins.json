@@ -1,0 +1,9 @@
+{
+  "parent": "oldnewcombat.mixins.json",
+  "package": "straywave.minecraft.oldnewcombat.forge.mixin",
+  "refmap": "oldnewcombat.forge.refmap.json",
+  "client": [
+  ],
+  "mixins": [
+  ]
+}

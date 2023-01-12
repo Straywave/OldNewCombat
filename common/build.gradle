@@ -1,6 +1,7 @@
 architectury { common("fabric", "forge") }
-loom { mixin { defaultRefmapName = "examplemod.refmap.json" } }
+loom { mixin { defaultRefmapName = "oldnewcombat.refmap.json" } }
 
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric}"
+    modApi "${parent.props.architecturyGroup}:architectury:${parent.props.architectury}"
 }

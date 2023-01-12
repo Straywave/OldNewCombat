@@ -11,7 +11,7 @@ authors = "${author}"
 description = '''${description}'''
 displayURL = "${websiteUrl}"
 updateJSONURL = "${forgeUpdateUrl}"
-itemIcon = "minecraft:oak_sapling"
+itemIcon = "minecraft:wooden_sword"
 
 [[dependencies.${id}]]
 modId = "forge"
@@ -24,5 +24,12 @@ side = "BOTH"
 modId = "minecraft"
 mandatory = true
 versionRange = "[${minecraftVersion}]"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.${id}]]
+modId = "architectury"
+mandatory = true
+versionRange = "[${architecturyVersion},)"
 ordering = "NONE"
 side = "BOTH"

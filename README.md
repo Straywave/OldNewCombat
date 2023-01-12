@@ -1,51 +1,34 @@
-Straywave's Mod Template
-========================
+Old New Combat
+==============
 
-A template that lets you build Minecraft mods for multiple versions and multiple loaders at the same time. Note that
-Architectury API is *not* included, the only default dependency is Fabric API (on Fabric, obviously).
+A mod that ports Minecraft's abandoned [Combat Tests][1] as a mod for 1.16 and 1.18.
 
-## Usage
+## Current Features
 
-You should know how to use Architectury before using this. In short, Architectury splits up your codebase between 3
-sub-projects, `common`, `fabric`, `forge`. Common is where the loader-agnostic code is, Fabric and Forge contain code
-for the respective mod loader.
+For a comprehensive list of changes, see the [Combat Tests][1] wiki page (Features under To-Do are obviously not
+implemented yet). Some notable changes:
 
-Obviously, not all logic is the same across versions, so that's where Manifold comes in.
+- Attack Damage and Attack Speed has been tweaked for all weapons
+- Axes always disable shields, new "Cleaving" enchantment increases stun duration. No more durability penalty.
+- Bow accuracy increased, however decreases the longer you hold it (Animation temporarily disabled)
+- Natural regeneration doesn't get a boost from saturation, however regenerates twice as fast and until 7 hunger instead 
+  of 18. Also causes less exhaustion.
+- Shields only block up to 5 damage. However, they block all non-player explosion (e.g. Creepers)
+- Potions stack to 16, snowballs to 64.
+- Potions and milk buckets consume twice as fast.
 
-[Manifold][1] is a neat little Gradle plugin that, among other things, adds a preprocessor to Java. It brings the C-like
-syntax of `#define`, `#if`, `#elif`, and `#endif` to Java.
+## To-Do
 
-By default, there are 2 versions, 1.16.5 and 1.18.2. You can write version-specific code like so:
+- [ ] Fix bow accuracy animation
+- [ ] 200% attacks, attack indicator tweaks
+  - [ ] Charge resets quicker when attack missed
+- [ ] Sweeping on Axes (can be enchanted, doesn't work)
+- [ ] Shield 50% knockback, 100 degree arc
+- [ ] Shield indicator
+- [ ] Shield automatically activating upon crouching
+  - [ ] Toggle under accessibility options
+- [ ] Attack reach implementation
+- [ ] Sprint critical attack
+- [ ] Trident with Impaling deals damage in rain/water
 
-```c
-#if MC_1_16_5
-System.out.println("Hello, Minecraft 1.16!");
-#elif MC_1_18_2
-System.out.println("Hello, Minecraft 1.18!");
-#endif
-```
-
-So, in short, after cloning this repo:
-
-1. Install Manifold plugin in IntelliJ IDEA (other IDEs aren't supported well) and restart IDEA.
-2. Run `./gradlew genSources` to decompile Minecraft and have the sources ready.
-3. Fill in the blanks in `gradle.properties`, under the "Key mod properties".
-4. Start coding!
-
-Some general usage guidance:
-- Don't touch `build.properties`. It is auto generated and should be synced with current mappings.
-- Use `-Pminecraft=1.16.5` or `-Pminecraft=1.18.2` to specify the target version on the command line.
-
-## Adding a new version
-
-1. Copy-paste one of the existing files in `props/`, name it according to the version.
-2. Fill it in with all the latest versions of fabric, forge, etc.
-3. Specify it as your Minecraft version in `gradle.properties` and/or `-Pminecraft`
-4. Run `./gradlew genSources` to generate sources for the new version.
-5. Voila!
-
-## Building everything
-
-Run `build.sh` to build the final JARs. Outputs will be in `forge/build/libs` and `fabric/build/libs`.
-
-[1]: http://manifold.systems
+[1]: https://minecraft.fandom.com/wiki/Java_Edition_Combat_Tests

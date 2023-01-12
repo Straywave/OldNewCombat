@@ -2,10 +2,10 @@ plugins { id "com.github.johnrengelman.shadow" version "7.1.2" }
 architectury { forge() }
 
 loom {
-    mixin { defaultRefmapName = "examplemod.forge.refmap.json" }
+    mixin { defaultRefmapName = "oldnewcombat.forge.refmap.json" }
     forge {
-        mixinConfig "examplemod.forge.mixins.json"
-        mixinConfig "examplemod.mixins.json"
+        // mixinConfig "oldnewcombat.forge.mixins.json"
+        mixinConfig "oldnewcombat.mixins.json"
     }
 }
 
@@ -18,6 +18,7 @@ configurations {
 
 dependencies {
     forge "net.minecraftforge:forge:${rootProject.minecraft}-${parent.props.forge}"
+    modApi "${parent.props.architecturyGroup}:architectury-forge:${parent.props.architectury}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionForge")) { transitive = false }
@@ -37,6 +38,7 @@ processResources {
             "minecraftVersion"    : rootProject.minecraft,
             "fabricVersion"       : rootProject.props.fabric,
             "forgeVersion"        : rootProject.props.forge,
+            "architecturyVersion" : parent.props.architectury,
     ]
 
     inputs.properties props

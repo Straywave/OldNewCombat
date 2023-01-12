@@ -1,0 +1,23 @@
+{
+  "required": true,
+  "package": "straywave.minecraft.oldnewcombat.mixin",
+  "minVersion": "0.7",
+  "refmap": "oldnewcombat.refmap.json",
+  "compatibilityLevel": "JAVA_8",
+  "client": [
+  ],
+  "mixins": [
+    "BowItemMixin",
+    "DiggerItemMixin",
+    "DrinkableMixin",
+    "FoodDataMixin",
+    "ItemsMixin",
+    "LivingEntityMixin",
+    "PlayerMixin",
+    "ThrowableMixin",
+    "TridentItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

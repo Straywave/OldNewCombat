@@ -2,7 +2,7 @@ plugins { id "com.github.johnrengelman.shadow" version "7.1.2" }
 architectury { fabric() }
 
 loom {
-    mixin { defaultRefmapName = "examplemod.fabric.refmap.json" }
+    mixin { defaultRefmapName = "oldnewcombat.fabric.refmap.json" }
 }
 
 configurations {
@@ -17,6 +17,7 @@ def mcFabricVer = rootProject.minecraft == "1.16.5" ? "1.16" : rootProject.minec
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric}"
     modApi "net.fabricmc.fabric-api:fabric-api:${parent.props.fabric}+${mcFabricVer}"
+    modApi "${parent.props.architecturyGroup}:architectury-fabric:${parent.props.architectury}"
 
     common(project(path: ":common", configuration: "namedElements")) { transitive false }
     shadowCommon(project(path: ":common", configuration: "transformProductionFabric")) { transitive false }
@@ -36,6 +37,7 @@ processResources {
             "minecraftVersion"    : rootProject.minecraft,
             "fabricVersion"       : rootProject.props.fabric,
             "forgeVersion"        : rootProject.props.forge,
+            "architecturyVersion" : parent.props.architectury,
     ]
 
     inputs.properties props
