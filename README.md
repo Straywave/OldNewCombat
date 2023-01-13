@@ -13,7 +13,9 @@ implemented yet). Some notable changes:
 - Bow accuracy increased, however decreases the longer you hold it (Animation temporarily disabled)
 - Natural regeneration doesn't get a boost from saturation, however regenerates twice as fast and until 7 hunger instead 
   of 18. Also causes less exhaustion.
+- Players always get knocked back, even by 0-damage hits like Snowballs.
 - Shields only block up to 5 damage. However, they block all non-player explosion (e.g. Creepers)
+- Shields only block damage in a 100-degree arc, instead of a full 180 degrees.
 - Potions stack to 16, snowballs to 64.
 - Potions and milk buckets consume twice as fast.
 
@@ -23,7 +25,7 @@ implemented yet). Some notable changes:
 - [ ] 200% attacks, attack indicator tweaks
   - [ ] Charge resets quicker when attack missed
 - [ ] Sweeping on Axes (can be enchanted, doesn't work)
-- [ ] Shield 50% knockback, 100 degree arc
+- [ ] Shield blocks only 50% knockback
 - [ ] Shield indicator
 - [ ] Shield automatically activating upon crouching
   - [ ] Toggle under accessibility options

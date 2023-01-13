@@ -52,6 +52,11 @@ public abstract class PlayerMixin extends LivingEntity {
         return amount / 2;
     }
 
+    @ModifyConstant(method = "hurt", constant = @Constant(floatValue = 0.0F, ordinal = 1))
+    private float alwaysCallSuperHurt(float constant) {
+        return constant - 1.0F; // 0.0F => -1.0F so that super.hurt() is always called to take knockback
+    }
+
 //    Breaks hand item rendering
 //    @ModifyConstant(method = "getAttackStrengthScale", constant = @Constant(floatValue = 1.0F))
 //    private float doubleChargedAttacks(float constant) {
