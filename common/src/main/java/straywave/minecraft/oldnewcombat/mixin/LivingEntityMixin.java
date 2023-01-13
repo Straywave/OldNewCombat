@@ -44,10 +44,11 @@ public abstract class LivingEntityMixin extends Entity {
         return Math.max(amount - 5.0F, 0.0F);
     }
 
-    @ModifyVariable(method = "hurt", at = @At("STORE"), ordinal = 0)
-    private boolean setIsFullyBlockedFlag(boolean value) {
-        return (amount - 5.0F) <= 0.0F; // This determines whether to shake the screen.
-    }
+//    Causes entities to not flash red when taking damage. Further investigation needed.
+//    @ModifyVariable(method = "hurt", at = @At("STORE"), ordinal = 0)
+//    private boolean setIsFullyBlockedFlag(boolean value) {
+//        return (amount - 5.0F) <= 0.0F; // This determines whether to shake the screen.
+//    }
 
     @Inject(method = "isDamageSourceBlocked", at = @At("HEAD"), cancellable = true)
     private void blockNonPlayerExplosions(DamageSource damageSource, CallbackInfoReturnable<Boolean> cir) {
