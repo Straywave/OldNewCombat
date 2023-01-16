@@ -16,11 +16,19 @@
     "main": ["straywave.minecraft.oldnewcombat.fabric.Entrypoint"]
   },
   "mixins": [
-    "oldnewcombat.mixins.json"
+    "oldnewcombat.mixins.json",
+    "oldnewcombat.fabric.mixins.json"
   ],
   "depends": {
     "fabric": ">=${fabricVersion}",
     "minecraft": "${minecraftVersion}",
     "architectury": ">=${architecturyVersion}"
+  },
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.discord": "https://discord.gg/yX7u32cKuN"
+      }
+    }
   }
 }

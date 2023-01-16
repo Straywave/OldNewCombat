@@ -5,5 +5,8 @@
   "client": [
   ],
   "mixins": [
+    "DiggerItemMixin",
+    "SwordItemMixin",
+    "TridentItemMixin"
   ]
 }

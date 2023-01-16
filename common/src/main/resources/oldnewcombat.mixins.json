@@ -5,17 +5,25 @@
   "refmap": "oldnewcombat.refmap.json",
   "compatibilityLevel": "JAVA_8",
   "client": [
+    "MinecraftMixin"
   ],
   "mixins": [
-    "BowItemMixin",
-    "DiggerItemMixin",
-    "DrinkableMixin",
     "FoodDataMixin",
-    "ItemsMixin",
     "LivingEntityMixin",
     "PlayerMixin",
-    "ThrowableMixin",
-    "TridentItemMixin"
+    "TiersMixin",
+    "item.AxeItemMixin",
+    "item.BowItemMixin",
+    "item.DiggerItemMixin",
+    "item.DrinkableMixin",
+    "item.HoeItemMixin",
+    "item.PickaxeItemMixin",
+    "item.PotionItemMixin",
+    "item.ShovelItemMixin",
+    "item.SnowballItemMixin",
+    "item.SwordItemMixin",
+    "item.ThrowableItemMixin",
+    "item.TridentItemMixin"
   ],
   "injectors": {
     "defaultRequire": 1

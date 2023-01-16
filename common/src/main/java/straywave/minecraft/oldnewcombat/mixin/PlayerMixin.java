@@ -10,7 +10,7 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.*;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.LocalCapture;
-import straywave.minecraft.oldnewcombat.OldNewCombat;
+import straywave.minecraft.oldnewcombat.Enchantments;
 
 @Mixin(Player.class)
 public abstract class PlayerMixin extends LivingEntity {
@@ -29,7 +29,7 @@ public abstract class PlayerMixin extends LivingEntity {
 
     @Inject(method = "blockUsingShield", at = @At("HEAD"), locals = LocalCapture.CAPTURE_FAILHARD)
     private void captureAttackerCleavingEnchantment(LivingEntity attacker, CallbackInfo ci) {
-        this.attackerCleavingLevel = EnchantmentHelper.getEnchantmentLevel(OldNewCombat.ENCHANTMENT_CLEAVING.get(), attacker);
+        this.attackerCleavingLevel = EnchantmentHelper.getEnchantmentLevel(Enchantments.CLEAVING.get(), attacker);
     }
 
     @ModifyConstant(method = "disableShield", constant = @Constant(floatValue = 0.75F))

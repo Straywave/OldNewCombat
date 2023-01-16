@@ -1,14 +1,13 @@
 package straywave.minecraft.oldnewcombat.forge;
 
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.fml.DistExecutor;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import straywave.minecraft.oldnewcombat.OldNewCombat;
 
 #if MC_1_16_5
 import me.shedaniel.architectury.platform.forge.EventBuses;
-#elif MC_1_18_2
+#else
 import dev.architectury.platform.forge.EventBuses;
 #endif
 
@@ -19,5 +18,6 @@ public class Entrypoint {
     public Entrypoint() {
         EventBuses.registerModEventBus(MOD_ID, FMLJavaModLoadingContext.get().getModEventBus());
         OldNewCombat.init();
+        MinecraftForge.EVENT_BUS.register(EventListener.class);
     }
 }

@@ -1,4 +1,4 @@
-package straywave.minecraft.oldnewcombat.mixin;
+package straywave.minecraft.oldnewcombat.mixin.item;
 
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -14,8 +14,8 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin({ EggItem.class, SnowballItem.class })
-public abstract class ThrowableMixin extends Item {
-    public ThrowableMixin(Properties properties) {
+public abstract class ThrowableItemMixin extends Item {
+    public ThrowableItemMixin(Properties properties) {
         super(properties);
     }
 

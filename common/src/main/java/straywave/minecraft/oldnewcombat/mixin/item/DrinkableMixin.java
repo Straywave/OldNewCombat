@@ -1,4 +1,4 @@
-package straywave.minecraft.oldnewcombat.mixin;
+package straywave.minecraft.oldnewcombat.mixin.item;
 
 import net.minecraft.world.item.HoneyBottleItem;
 import net.minecraft.world.item.MilkBucketItem;

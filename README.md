@@ -1,5 +1,9 @@
+<img src="common/src/main/resources/assets/oldnewcombat/iconhq.png" width="128" align="right" />
+
 Old New Combat
 ==============
+
+[![Mod Version](https://shields.io/modrinth/v/old-new-combat)](https://modrinth.com/mod/old-new-combat)
 
 A mod that ports Minecraft's abandoned [Combat Tests][1] as a mod for 1.16 and 1.18.
 
@@ -8,6 +12,7 @@ A mod that ports Minecraft's abandoned [Combat Tests][1] as a mod for 1.16 and 1
 For a comprehensive list of changes, see the [Combat Tests][1] wiki page (Features under To-Do are obviously not
 implemented yet). Some notable changes:
 
+- Items now have an Attack Reach attribute. **Currently only implemented on Forge.**
 - Attack Damage and Attack Speed has been tweaked for all weapons
 - Axes always disable shields, new "Cleaving" enchantment increases stun duration. No more durability penalty.
 - Bow accuracy increased, however decreases the longer you hold it (Animation temporarily disabled)
@@ -22,14 +27,17 @@ implemented yet). Some notable changes:
 ## To-Do
 
 - [ ] Fix bow accuracy animation
+- [ ] Fix 1.16.5 axe damages
 - [ ] 200% attacks, attack indicator tweaks
+  - [ ] Attacks not available until 100% charged
   - [ ] Charge resets quicker when attack missed
 - [ ] Sweeping on Axes (can be enchanted, doesn't work)
 - [ ] Shield blocks only 50% knockback
 - [ ] Shield indicator
 - [ ] Shield automatically activating upon crouching
   - [ ] Toggle under accessibility options
-- [ ] Attack reach implementation
+- [ ] Attack swings through grass
+- [ ] Attack reach implementation for Fabric
 - [ ] Sprint critical attack
 - [ ] Trident with Impaling deals damage in rain/water
 

@@ -1,4 +1,4 @@
-package straywave.minecraft.oldnewcombat.mixin;
+package straywave.minecraft.oldnewcombat.mixin.item;
 
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.BowItem;
